@@ -24,10 +24,9 @@ public class Employee extends TaxFunction{
 	public String getEmployeeId(){
 		return this.employeeId;
 	}
-		
-	public void setMonthlySalary(int grade) {
-		switch(grade){
-			case 1:
+	
+	public void setMonthlySalary(int grade) {	
+		if (grade == 1) {
 			monthlySalary = 3000000;
 
 			case 2:
