@@ -1,14 +1,11 @@
 package lib;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.TimeZone;
 
-public class Employee {
+public class Employee extends TaxFunction{
 	private String employeeId;	
 	private Date dateJoined;
 	private int monthWorkingInYear;
@@ -22,13 +19,13 @@ public class Employee {
 		this.employeeId = employeeId;
 		this.dateJoined = dateJoined;
 		this.monthWorkingInYear = monthWorkingInYear;
+
 	}
 
-	/**
-	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
-	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
-	 */
-	
+	public String getEmployeeId(){
+		return this.employeeId;
+	}
+
 	public void setMonthlySalary(int grade) {
 		switch(grade){
 			case 1:
@@ -46,18 +43,19 @@ public class Employee {
 		}
 	}
 
-	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
+	}
+
+	public int getAnnualDeductible() {	
+		return this.annualDeductible;
 	}
 	
 	public void setAdditionalIncome(int income) {	
 		this.otherMonthlyIncome = income;
 	}
-   
+
 	public int getAnnualIncomeTax() {
-		
-		//Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
 		LocalDate date = LocalDate.now();
 		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Kolkata"));
 		cal.setTime(dateJoined);
@@ -67,7 +65,7 @@ public class Employee {
 		}else {
 			monthWorkingInYear = 12;
 		}
-		
-		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, workerParent.getSpouseIdNumber().equals(""), workerParent.getChildIdNumber().size());
+		baseSalary(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible);
+		return TaxFunction.calculateTax();
 	}
 }
