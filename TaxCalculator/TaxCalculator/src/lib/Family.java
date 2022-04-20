@@ -13,7 +13,7 @@ public class Family extends Person{
 
     public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = getIdNumber();
+		this.spouseIdNumber = spouseIdNumber;
 	}
 
     public void addChild(String childName, String childIdNumber) {

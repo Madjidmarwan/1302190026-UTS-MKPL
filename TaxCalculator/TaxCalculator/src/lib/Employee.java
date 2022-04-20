@@ -6,11 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Employee {
-	private String employeeId;
-	
-	private int yearJoined;
-	private int monthJoined;
-	private int dayJoined;
+	private String employeeId;	
+	private Date dateJoined;
 	private int monthWorkingInYear;
 
 	private int monthlySalary;
