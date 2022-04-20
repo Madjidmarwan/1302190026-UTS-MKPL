@@ -11,6 +11,5 @@ public class Person extends Employee{
     private String address;
 
     private boolean isForeigner;
-    private enum gender {PRIA, WANITA;}
- 
+    private enum gender {PRIA, WANITA;} 
 }
