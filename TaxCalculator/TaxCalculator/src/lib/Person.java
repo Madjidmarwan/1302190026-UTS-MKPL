@@ -22,6 +22,21 @@ public class Person extends Employee{
         this.isForeigner = isForeigner;
     }
 
+    public Person getPerson(){
+        return this.firstName; 
+        return this.lastName;
+        return this.idNumber;
+        return this.address;
+        return this.isForeigner;
+    }
+
+    public boolean getForeigner(){
+        return this.isForeigner;
+    }
+
+    public Person(){
+        super();
+    }
 }
  
 
