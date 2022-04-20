@@ -21,7 +21,6 @@ public class Person extends Employee{
 		this.address = address;
         this.isForeigner = isForeigner;
     }
-
 }
  
 
