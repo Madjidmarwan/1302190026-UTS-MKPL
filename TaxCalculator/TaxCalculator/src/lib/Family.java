@@ -25,8 +25,16 @@ public class Family extends Person{
 		return this.spouseIdNumber;
 	}
 
+	public String getSpouseName(){
+		return this.spouseName;
+	}
+
     public void addChild(String childName, String childIdNumber) {
 		childNames.add(childName);
 		childIdNumbers.add(childIdNumber);
+	}
+
+	public List<String>getChildIdNumber(){
+		return this.childIdNumbers;
 	}
 }
