@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Employee {
+<<<<<<< Updated upstream
 
 	private String employeeId;
 	private String firstName;
@@ -16,6 +17,10 @@ public class Employee {
 	private int yearJoined;
 	private int monthJoined;
 	private int dayJoined;
+=======
+	private String employeeId;	
+	private Date dateJoined;
+>>>>>>> Stashed changes
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
